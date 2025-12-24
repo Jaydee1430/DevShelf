@@ -6,8 +6,8 @@
     <title>DevShelf</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-gray-900">
-    <nav class="bg-gray-900 shadow-lg">
+  <body class="bg-[#171131]">
+    <nav class="bg-[#130e29] shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           <!-- LEFT: Logo -->
@@ -66,7 +66,7 @@
       <!-- Mobile Menu -->
       <div
         id="mobile-menu"
-        class="hidden md:hidden bg-gray-900 px-4 pt-2 pb-4 space-y-2"
+        class="hidden md:hidden bg-[#130e29] px-4 pt-2 pb-4 space-y-2"
       >
         <a href="#home" class="block text-white hover:text-indigo-600 font-bold"
           >Home</a
@@ -89,9 +89,15 @@
       </div>
     </nav>
 
-    <div class="text-center mt-10">
+    <div class="relative mt-10 text-center">
+      <div class="absolute inset-0 flex justify-center items-center -z-10">
+        <div
+          class="w-80 h-80 bg-indigo-500 rounded-full opacity-30 blur-3xl"
+        ></div>
+      </div>
+
       <h1
-        class="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-white bg-clip-text text-transparent"
+        class="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-white bg-clip-text text-transparent mt-14"
       >
         Master your stack
       </h1>
@@ -118,14 +124,13 @@
           />
         </svg>
       </button>
-
       <div
-        class="bg-gray-900 flex px-1 py-1 rounded-full border border-indigo-900 overflow-hidden max-w-md mx-auto mt-5 shadow-lg"
+        class="bg-[#130e29] flex px-1 py-1 rounded-full border border-indigo-900 overflow-hidden max-w-md mx-auto mt-5 shadow-lg"
       >
         <input
           type="text"
           placeholder="Search Something..."
-          class="w-full outline-none bg-gray-900 pl-4 text-sm"
+          class="w-full outline-none bg-[#130e29] pl-4 text-sm"
         />
         <button
           type="button"
@@ -135,6 +140,275 @@
         </button>
       </div>
     </div>
+
+    <div class="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-2xl text-white font-bold mx-4">Popular Languages</h1>
+
+      <div
+        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 mx-4 gap-2 sm:gap-0"
+      >
+        <p class="text-gray-300 text-lg">
+          Start learning with our curated collection of programming languages.
+        </p>
+
+        <a
+          href="#view"
+          class="text-indigo-500 hover:text-indigo-400 whitespace-nowrap"
+        >
+          View All
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-[#171131] p-10 flex items-center justify-center">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl"
+      >
+        <div
+          class="bg-[#130e29] border border-gray-800 rounded-xl p-8 flex flex-col items-center hover:border-blue-500 transition-colors cursor-pointer"
+        >
+          <div
+            class="w-16 h-16 bg-[#1e293b] rounded-full flex items-center justify-center mb-6"
+          >
+            <span class="text-blue-400 text-2xl font-mono">&lt;/&gt;</span>
+          </div>
+          <h3 class="text-white text-xl font-bold mb-2">Python</h3>
+          <p class="text-gray-400">120+ Resources</p>
+        </div>
+
+        <div
+          class="bg-[#130e29] border border-gray-800 rounded-xl p-8 flex flex-col items-center hover:border-yellow-500 transition-colors cursor-pointer"
+        >
+          <div
+            class="w-16 h-16 bg-[#262111] rounded-full flex items-center justify-center mb-6"
+          >
+            <span class="text-yellow-500 text-2xl font-mono">{ }</span>
+          </div>
+          <h3 class="text-white text-xl font-bold mb-2">JavaScript</h3>
+          <p class="text-gray-400">340+ Resources</p>
+        </div>
+
+        <div
+          class="bg-[#130e29] border border-gray-800 rounded-xl p-8 flex flex-col items-center hover:border-blue-400 transition-colors cursor-pointer"
+        >
+          <div
+            class="w-16 h-16 bg-[#162539] rounded-full flex items-center justify-center mb-6"
+          >
+            <svg
+              class="w-8 h-8 text-blue-400"
+              viewBox="0 0 64 64"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Steam -->
+              <path
+                d="M24 4c-3 4 3 7 3 11s-6 7-3 11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M32 4c-3 4 3 7 3 11s-6 7-3 11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M40 4c-3 4 3 7 3 11s-6 7-3 11"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+
+              <!-- Cup -->
+              <path d="M16 28h24v10c0 6-6 10-12 10s-12-4-12-10V28z" />
+
+              <!-- Handle -->
+              <path
+                d="M40 30h6c4 0 6 2 6 5s-2 5-6 5h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+
+              <!-- Saucer -->
+              <ellipse cx="28" cy="50" rx="16" ry="3" />
+            </svg>
+          </div>
+          <h3 class="text-white text-xl font-bold mb-2">Java</h3>
+          <p class="text-gray-400">95 Resources</p>
+        </div>
+
+        <div
+          class="bg-[#130e29] border border-gray-800 rounded-xl p-8 flex flex-col items-center hover:border-pink-500 transition-colors cursor-pointer"
+        >
+          <div
+            class="w-16 h-16 bg-[#2d1b2e] rounded-full flex items-center justify-center mb-6"
+          >
+            <span class="text-pink-500 text-2xl font-mono">&gt;_</span>
+          </div>
+          <h3 class="text-white text-xl font-bold mb-2">C++</h3>
+          <p class="text-gray-400">64 Resources</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-2xl text-white font-bold mx-4">Featured Resources</h1>
+
+      <div
+        class="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 mx-4 gap-4"
+      >
+        <p class="text-gray-300 text-lg">
+          Hand-picked resources to help you on your coding journey.
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-6 mt-10">
+      <!-- Card 1 -->
+      <a
+        href="#"
+        class="max-w-sm w-full sm:w-auto rounded overflow-hidden shadow-lg border border-gray-700 bg-[#130e29] hover:shadow-2xl transition-shadow duration-300"
+      >
+        <img class="w-full" src="../img/react.jpg" alt="React" />
+        <div class="px-6 py-4">
+          <div class="text-white font-bold text-xl mb-2">
+            Learn React in 30 Days
+          </div>
+          <p class="text-gray-300 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
+        </div>
+      </a>
+
+      <!-- Card 2 -->
+      <a
+        href="#"
+        class="max-w-sm w-full sm:w-auto rounded overflow-hidden shadow-lg border border-gray-700 bg-[#130e29] hover:shadow-2xl transition-shadow duration-300"
+      >
+        <img class="w-full" src="../img/java.jpg" alt="Vue" />
+        <div class="px-6 py-4">
+          <div class="text-white font-bold text-xl mb-2">
+            Learn Vue in 30 Days
+          </div>
+          <p class="text-gray-300 text-base">
+            Another short description for Vue card. Practice makes perfect!
+          </p>
+        </div>
+      </a>
+
+      <!-- Card 3 -->
+      <a
+        href="#"
+        class="max-w-sm w-full sm:w-auto rounded overflow-hidden shadow-lg border border-gray-700 bg-[#130e29] hover:shadow-2xl transition-shadow duration-300"
+      >
+        <img class="w-full" src="../img/python.jpg" alt="Angular" />
+        <div class="px-6 py-4">
+          <div class="text-white font-bold text-xl mb-2">
+            Learn Angular in 30 Days
+          </div>
+          <p class="text-gray-300 text-base">
+            A quick Angular guide for developers who want to level up fast.
+          </p>
+        </div>
+      </a>
+    </div>
+    <footer
+      class="w-full bg-[#050510] text-gray-400 py-12 px-6 mt-20 bg-[#130e29]"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between gap-10">
+          <div class="max-w-xs">
+            <h2 class="text-indigo-500 text-xl font-semibold mb-4">DevShelf</h2>
+            <p class="text-sm leading-relaxed mb-6">
+              An open-source collection of the best programming resources on the
+              web. Curated by developers, for developers.
+            </p>
+            <div class="flex gap-4">
+              <div class="w-8 h-8 rounded-full bg-gray-800/40"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-800/40"></div>
+              <div class="w-8 h-8 rounded-full bg-gray-800/40"></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-12 text-sm">
+            <div>
+              <h3
+                class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
+              >
+                Platform
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition">Browse</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Roadmaps</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Mentors</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Pricing</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
+              >
+                Resources
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition">Blog</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition"
+                    >Documentation</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Guidelines</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Support</a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
+              >
+                Company
+              </h3>
+              <ul class="space-y-3">
+                <li>
+                  <a href="#" class="hover:text-white transition">About Us</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Careers</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Terms</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-white transition">Privacy</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-12 pt-8 border-t border-gray-800/50 text-center text-[10px] sm:text-xs"
+        >
+          <p>&copy; 2024 DevShelf. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
     <script>
       const menuBtn = document.getElementById("menu-btn");
