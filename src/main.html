@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevShelf</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900">
+    <nav class="bg-gray-900 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <!-- LEFT: Logo -->
+          <a
+            href="#"
+            class="flex items-center text-indigo-500 font-bold text-xl"
+          >
+            DevShelf
+          </a>
+
+          <!-- RIGHT: Desktop Links -->
+          <div class="hidden md:flex space-x-10 items-center">
+            <a
+              href="#home"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >Services</a
+            >
+            <a
+              href="#contact"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Mobile Hamburger Menu -->
+          <div class="md:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-gray-900 px-4 pt-2 pb-4 space-y-2"
+      >
+        <a href="#home" class="block text-white hover:text-indigo-600 font-bold"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="block text-white hover:text-indigo-600 font-bold"
+          >About</a
+        >
+        <a
+          href="#services"
+          class="block text-white hover:text-indigo-600 font-bold"
+          >Services</a
+        >
+        <a
+          href="#contact"
+          class="block text-white hover:text-indigo-600 font-bold"
+          >Contact</a
+        >
+      </div>
+    </nav>
+
+    <div class="text-center mt-10">
+      <h1
+        class="text-5xl font-bold bg-gradient-to-r from-indigo-500 to-white bg-clip-text text-transparent"
+      >
+        Master your stack
+      </h1>
+      <p class="text-gray-300 mt-4 mx-4 text-lg">
+        Programming books, guides, and resources for developers who want to
+        level up their skills.
+      </p>
+      <button
+        class="mt-6 bg-indigo-500 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out inline-flex items-center justify-center"
+      >
+        <span>Explore Languages</span>
+        <svg
+          xmlns="www.w3.org"
+          class="ml-2 h-5 w-5 transform hover:translate-x-1 transition duration-300 ease-in-out"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M14 5l7 7m0 0l-7 7m7-7H3"
+          />
+        </svg>
+      </button>
+
+      <div
+        class="bg-gray-900 flex px-1 py-1 rounded-full border border-indigo-900 overflow-hidden max-w-md mx-auto mt-5 shadow-lg"
+      >
+        <input
+          type="text"
+          placeholder="Search Something..."
+          class="w-full outline-none bg-gray-900 pl-4 text-sm"
+        />
+        <button
+          type="button"
+          class="bg-indigo-500 hover:bg-indigo-600 transition-all text-white text-sm rounded-full px-5 py-2.5"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>
