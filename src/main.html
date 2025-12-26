@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevShelf</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../dist/main.js" type="module" defer></script>
   </head>
   <body class="bg-[#171131]">
     <nav class="bg-[#130e29] shadow-lg">
@@ -409,14 +410,5 @@
         </div>
       </div>
     </footer>
-
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    </script>
   </body>
 </html>
