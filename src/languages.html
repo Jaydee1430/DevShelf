@@ -7,105 +7,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-[#171131]">
-    <!-- Navigation Bar -->
     <nav class="bg-[#130e29] shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           <a
-            href="#"
+            href="languages.html"
             class="flex items-center text-indigo-500 font-bold text-xl"
+            >DevShelf</a
           >
-            DevShelf
-          </a>
           <div class="hidden md:flex space-x-10 items-center">
             <a
-              href="#home"
-              class="text-white hover:text-indigo-500 font-bold text-sm"
-              >Home</a
+              href="languages.html"
+              class="text-white hover:text-indigo-500 font-bold text-sm underline underline-offset-8"
+              >Languages</a
             >
             <a
-              href="#about"
+              href="resources.html"
               class="text-white hover:text-indigo-500 font-bold text-sm"
-              >About</a
+              >Resources</a
             >
-            <a
-              href="#services"
-              class="text-white hover:text-indigo-500 font-bold text-sm"
-              >Services</a
-            >
-            <a
-              href="#contact"
-              class="text-white hover:text-indigo-500 font-bold text-sm"
-              >Contact</a
-            >
-          </div>
-          <div class="md:hidden">
-            <button id="menu-btn" class="text-white focus:outline-none">
-              <svg
-                class="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
-      <div
-        id="mobile-menu"
-        class="hidden md:hidden bg-[#130e29] px-4 pt-2 pb-4 space-y-2"
-      >
-        <a href="#home" class="block text-white hover:text-indigo-600 font-bold"
-          >Home</a
-        >
-        <a
-          href="#about"
-          class="block text-white hover:text-indigo-600 font-bold"
-          >About</a
-        >
-        <a
-          href="#services"
-          class="block text-white hover:text-indigo-600 font-bold"
-          >Services</a
-        >
-        <a
-          href="#contact"
-          class="block text-white hover:text-indigo-600 font-bold"
-          >Contact</a
-        >
-      </div>
     </nav>
 
-    <!-- Programming Languages Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <!-- Header -->
       <div class="mb-12">
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
           Programming Languages
         </h1>
         <p class="text-gray-400 text-lg max-w-2xl">
-          Explore our comprehensive collection of resources categorized by
-          programming language. From ancient scripts to modern frameworks.
+          Explore our comprehensive collection of resources. Click a language to
+          view its specific books, courses, and challenges.
         </p>
       </div>
 
-      <!-- Search and Sort -->
-
-      <!-- Languages Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Python -->
         <div
+          onclick="window.location.href='resources.html?lang=Python'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-indigo-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-indigo-500/10 flex items-center justify-center mb-4 group-hover:bg-indigo-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-indigo-500/10 flex items-center justify-center mb-4 group-hover:bg-indigo-500/20"
           >
             <svg
               class="w-7 h-7 text-indigo-500"
@@ -122,12 +65,12 @@
           <p class="text-gray-400 text-sm">120+ Resources</p>
         </div>
 
-        <!-- JavaScript -->
         <div
+          onclick="window.location.href='resources.html?lang=JavaScript'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-yellow-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 group-hover:bg-yellow-500/20"
           >
             <svg
               class="w-7 h-7 text-yellow-500"
@@ -143,12 +86,12 @@
           <p class="text-gray-400 text-sm">340+ Resources</p>
         </div>
 
-        <!-- TypeScript -->
         <div
+          onclick="window.location.href='resources.html?lang=TypeScript'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-blue-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-blue-500/10 flex items-center justify-center mb-4 group-hover:bg-blue-500/20"
           >
             <svg
               class="w-7 h-7 text-blue-500"
@@ -164,12 +107,12 @@
           <p class="text-gray-400 text-sm">215 Resources</p>
         </div>
 
-        <!-- Java -->
         <div
+          onclick="window.location.href='resources.html?lang=Java'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-red-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20"
           >
             <svg
               class="w-7 h-7 text-red-500"
@@ -185,12 +128,12 @@
           <p class="text-gray-400 text-sm">95 Resources</p>
         </div>
 
-        <!-- C++ -->
         <div
+          onclick="window.location.href='resources.html?lang=C%2B%2B'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-pink-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center mb-4 group-hover:bg-pink-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-pink-500/10 flex items-center justify-center mb-4 group-hover:bg-pink-500/20"
           >
             <svg
               class="w-7 h-7 text-pink-500"
@@ -210,12 +153,12 @@
           <p class="text-gray-400 text-sm">64 Resources</p>
         </div>
 
-        <!-- C# -->
         <div
+          onclick="window.location.href='resources.html?lang=C%23'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-purple-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-purple-500/10 flex items-center justify-center mb-4 group-hover:bg-purple-500/20"
           >
             <svg
               class="w-7 h-7 text-purple-500"
@@ -234,12 +177,12 @@
           <p class="text-gray-400 text-sm">82 Resources</p>
         </div>
 
-        <!-- Go -->
         <div
+          onclick="window.location.href='resources.html?lang=Go'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-cyan-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:bg-cyan-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-cyan-500/10 flex items-center justify-center mb-4 group-hover:bg-cyan-500/20"
           >
             <svg
               class="w-7 h-7 text-cyan-500"
@@ -262,12 +205,12 @@
           <p class="text-gray-400 text-sm">45 Resources</p>
         </div>
 
-        <!-- Rust -->
         <div
+          onclick="window.location.href='resources.html?lang=Rust'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-orange-500/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20 transition-all"
+            class="w-14 h-14 rounded-full bg-orange-500/10 flex items-center justify-center mb-4 group-hover:bg-orange-500/20"
           >
             <svg
               class="w-7 h-7 text-orange-500"
@@ -286,12 +229,12 @@
           <p class="text-gray-400 text-sm">38 Resources</p>
         </div>
 
-        <!-- Ruby -->
         <div
+          onclick="window.location.href='resources.html?lang=Ruby'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-red-400/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-red-400/10 flex items-center justify-center mb-4 group-hover:bg-red-400/20 transition-all"
+            class="w-14 h-14 rounded-full bg-red-400/10 flex items-center justify-center mb-4 group-hover:bg-red-400/20"
           >
             <svg
               class="w-7 h-7 text-red-400"
@@ -299,7 +242,7 @@
               viewBox="0 0 24 24"
             >
               <path
-                d="M20.156.083c3.033.525 3.893 2.598 3.829 4.77L24 4.822 22.635 22.71 4.89 23.926h.016C3.433 23.864.15 23.729 0 19.139l1.645-3 2.819 6.586.503 1.172 2.805-9.144-.03.007.016-.03 9.255 2.956-1.396-5.431-.99-3.9 8.82-.569-.615-.51L16.5 2.114 20.159.073l-.003.01zM0 19.089zM5.13 5.073c3.561-3.533 8.157-5.621 9.922-3.84 1.762 1.777-.105 6.105-3.673 9.636-3.563 3.532-8.103 5.734-9.864 3.957-1.766-1.777.045-6.217 3.612-9.75l.003-.003z"
+                d="M20.156.083c3.033.525 3.893 2.598 3.829 4.77L24 4.822 22.635 22.71 4.89 23.926h.016C3.433 23.864.15 23.729 0 19.139l1.645-3 2.819 6.586.503 1.172 2.805-9.144-.03.007.016-.03 9.255 2.956-1.396-5.431-.99-3.9 8.82-.569-.615-.51L16.5 2.114 20.159.073l-.003.01zM5.13 5.073c3.561-3.533 8.157-5.621 9.922-3.84 1.762 1.777-.105 6.105-3.673 9.636-3.563 3.532-8.103 5.734-9.864 3.957-1.766-1.777.045-6.217 3.612-9.75l.003-.003z"
               />
             </svg>
           </div>
@@ -307,12 +250,12 @@
           <p class="text-gray-400 text-sm">58 Resources</p>
         </div>
 
-        <!-- PHP -->
         <div
+          onclick="window.location.href='resources.html?lang=PHP'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-indigo-400/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-indigo-400/10 flex items-center justify-center mb-4 group-hover:bg-indigo-400/20 transition-all"
+            class="w-14 h-14 rounded-full bg-indigo-400/10 flex items-center justify-center mb-4 group-hover:bg-indigo-400/20"
           >
             <svg
               class="w-7 h-7 text-indigo-400"
@@ -329,12 +272,12 @@
           <p class="text-gray-400 text-sm">110 Resources</p>
         </div>
 
-        <!-- Swift -->
         <div
+          onclick="window.location.href='resources.html?lang=Swift'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-orange-400/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-orange-400/10 flex items-center justify-center mb-4 group-hover:bg-orange-400/20 transition-all"
+            class="w-14 h-14 rounded-full bg-orange-400/10 flex items-center justify-center mb-4 group-hover:bg-orange-400/20"
           >
             <svg
               class="w-7 h-7 text-orange-400"
@@ -350,12 +293,12 @@
           <p class="text-gray-400 text-sm">29 Resources</p>
         </div>
 
-        <!-- Kotlin -->
         <div
+          onclick="window.location.href='resources.html?lang=Kotlin'"
           class="bg-[#130e29] rounded-xl p-6 hover:bg-[#221a40] transition-all duration-300 cursor-pointer group border border-transparent hover:border-purple-400/30"
         >
           <div
-            class="w-14 h-14 rounded-full bg-purple-400/10 flex items-center justify-center mb-4 group-hover:bg-purple-400/20 transition-all"
+            class="w-14 h-14 rounded-full bg-purple-400/10 flex items-center justify-center mb-4 group-hover:bg-purple-400/20"
           >
             <svg
               class="w-7 h-7 text-purple-400"
@@ -374,108 +317,10 @@
       </div>
     </section>
 
-    <!-- Footer -->
     <footer class="w-full bg-[#130e29] text-gray-400 py-12 px-6 mt-20">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between gap-10">
-          <div class="max-w-xs">
-            <h2 class="text-indigo-500 text-xl font-semibold mb-4">DevShelf</h2>
-            <p class="text-sm leading-relaxed mb-6">
-              An open-source collection of the best programming resources on the
-              web. Curated by developers, for developers.
-            </p>
-            <div class="flex gap-4">
-              <div class="w-8 h-8 rounded-full bg-gray-800/40"></div>
-              <div class="w-8 h-8 rounded-full bg-gray-800/40"></div>
-              <div class="w-8 h-8 rounded-full bg-gray-800/40"></div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-12 text-sm">
-            <div>
-              <h3
-                class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
-              >
-                Platform
-              </h3>
-              <ul class="space-y-3">
-                <li>
-                  <a href="#" class="hover:text-white transition">Browse</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Roadmaps</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Mentors</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Pricing</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3
-                class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
-              >
-                Resources
-              </h3>
-              <ul class="space-y-3">
-                <li>
-                  <a href="#" class="hover:text-white transition">Blog</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition"
-                    >Documentation</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Guidelines</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Support</a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3
-                class="text-white font-bold mb-4 uppercase text-xs tracking-widest"
-              >
-                Company
-              </h3>
-              <ul class="space-y-3">
-                <li>
-                  <a href="#" class="hover:text-white transition">About Us</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Careers</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Terms</a>
-                </li>
-                <li>
-                  <a href="#" class="hover:text-white transition">Privacy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="mt-12 pt-8 border-t border-gray-800/50 text-center text-[10px] sm:text-xs"
-        >
-          <p>&copy; 2024 DevShelf. All rights reserved.</p>
-        </div>
+      <div class="max-w-7xl mx-auto text-center">
+        <p>&copy; 2024 DevShelf. All rights reserved.</p>
       </div>
     </footer>
-
-    <script>
-      // Mobile menu toggle
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-    </script>
   </body>
 </html>

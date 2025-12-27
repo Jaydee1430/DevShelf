@@ -5,300 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevShelf - Browse Resources</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="../dist/resources.js"></script>
   </head>
-  <body class="bg-[#0a0818]">
-    <!-- Navigation Bar -->
+  <body class="bg-[#0a0818] text-white">
     <nav class="bg-[#130e29] shadow-lg">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
-          <a href="#" class="flex items-center text-indigo-500 font-bold text-xl">
-            DevShelf
-          </a>
+          <a
+            href="#"
+            class="flex items-center text-indigo-500 font-bold text-xl"
+            >DevShelf</a
+          >
           <div class="hidden md:flex space-x-10 items-center">
-            <a href="#home" class="text-white hover:text-indigo-500 font-bold text-sm">Home</a>
-            <a href="#about" class="text-white hover:text-indigo-500 font-bold text-sm">About</a>
-            <a href="#services" class="text-white hover:text-indigo-500 font-bold text-sm">Services</a>
-            <a href="#contact" class="text-white hover:text-indigo-500 font-bold text-sm">Contact</a>
-          </div>
-          <div class="md:hidden">
-            <button id="menu-btn" class="text-white focus:outline-none">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            </button>
+            <a
+              href="#"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >Services</a
+            >
+            <a
+              href="#"
+              class="text-white hover:text-indigo-500 font-bold text-sm"
+              >Contact</a
+            >
           </div>
         </div>
       </div>
-      <div id="mobile-menu" class="hidden md:hidden bg-[#130e29] px-4 pt-2 pb-4 space-y-2">
-        <a href="#home" class="block text-white hover:text-indigo-600 font-bold">Home</a>
-        <a href="#about" class="block text-white hover:text-indigo-600 font-bold">About</a>
-        <a href="#services" class="block text-white hover:text-indigo-600 font-bold">Services</a>
-        <a href="#contact" class="block text-white hover:text-indigo-600 font-bold">Contact</a>
-      </div>
     </nav>
 
-    <!-- Browse Resources Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <!-- Header -->
       <div class="mb-8">
         <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
           Browse Resources
         </h1>
         <p class="text-gray-400 text-lg max-w-2xl">
-          Discover thousands of curated books, courses, and guides to accelerate your development journey.
+          Discover curated books, courses, and guides.
         </p>
       </div>
 
-      <!-- Category Tabs -->
-      <div class="flex flex-wrap gap-4 mb-8 border-b border-gray-800 pb-4">
-        <button class="px-4 py-2 text-indigo-500 font-semibold border-b-2 border-indigo-500">All</button>
-        <button class="px-4 py-2 text-gray-400 hover:text-white font-semibold transition">Books</button>
-        <button class="px-4 py-2 text-gray-400 hover:text-white font-semibold transition">Courses</button>
-        <button class="px-4 py-2 text-gray-400 hover:text-white font-semibold transition">Articles</button>
-        <button class="px-4 py-2 text-gray-400 hover:text-white font-semibold transition">Interactive</button>
-        <button class="px-4 py-2 text-gray-400 hover:text-white font-semibold transition">Open Source</button>
+      <div
+        id="category-tabs"
+        class="flex flex-wrap gap-4 mb-8 border-b border-gray-800 pb-4"
+      >
+        <button
+          data-category="All"
+          class="tab-btn px-4 py-2 text-indigo-500 font-semibold border-b-2 border-indigo-500"
+        >
+          All
+        </button>
+        <button
+          data-category="Books"
+          class="tab-btn px-4 py-2 text-gray-400 hover:text-white font-semibold transition"
+        >
+          Books
+        </button>
+        <button
+          data-category="Challenges"
+          class="tab-btn px-4 py-2 text-gray-400 hover:text-white font-semibold transition"
+        >
+          Challenges
+        </button>
+        <button
+          data-category="Articles"
+          class="tab-btn px-4 py-2 text-gray-400 hover:text-white font-semibold transition"
+        >
+          Articles
+        </button>
       </div>
 
-      <!-- Search and Filters -->
-      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-10"
+      >
         <div class="relative w-full sm:flex-1 max-w-xl">
-          <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="m21 21-4.35-4.35"></path>
-          </svg>
           <input
+            id="search-input"
             type="text"
-            placeholder="Search titles, authors, or topics..."
-            class="w-full bg-[#1a1530] text-white pl-12 pr-4 py-3 rounded-lg border border-gray-700 focus:border-indigo-500 focus:outline-none"
+            placeholder="Search titles..."
+            class="w-full bg-[#1a1530] text-white pl-4 pr-4 py-3 rounded-lg border border-gray-700 focus:border-indigo-500 focus:outline-none"
           />
         </div>
-        <div class="flex gap-3">
-          <button class="flex items-center gap-2 bg-[#1a1530] text-white px-4 py-3 rounded-lg border border-gray-700 hover:border-indigo-500 transition">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-            </svg>
-            Filters
-          </button>
-          <select class="bg-[#1a1530] text-white px-4 py-3 rounded-lg border border-gray-700 focus:border-indigo-500 focus:outline-none">
-            <option>Sort: Newest</option>
-            <option>Sort: Popular</option>
-            <option>Sort: Rating</option>
-            <option>Sort: Title</option>
-          </select>
-        </div>
+        <select
+          id="language-filter"
+          class="bg-[#1a1530] text-white px-4 py-3 rounded-lg border border-gray-700 focus:border-indigo-500 focus:outline-none"
+        >
+          <option value="All">All Languages</option>
+          <option value="Python">Python</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="TypeScript">TypeScript</option>
+          <option value="Rust">Rust</option>
+          <option value="Go">Go</option>
+          <option value="Java">Java</option>
+          <option value="C++">C++</option>
+          <option value="C#">C#</option>
+          <option value="Ruby">Ruby</option>
+          <option value="PHP">PHP</option>
+          <option value="Swift">Swift</option>
+          <option value="Kotlin">Kotlin</option>
+        </select>
       </div>
 
-      <!-- Resources Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1: The Modern Web Developer -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-indigo-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-teal-900/40 to-teal-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Free</span>
-            <svg class="w-20 h-20 text-teal-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-            </svg>
-            <button class="absolute inset-0 flex items-center justify-center bg-black/0 group-hover:bg-black/40 transition-all opacity-0 group-hover:opacity-100">
-              <span class="bg-indigo-600 text-white px-6 py-2 rounded-full font-semibold">Generate screen</span>
-            </button>
-          </div>
-          <div class="p-6">
-            <div class="text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">E-Book</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-indigo-400 transition">The Modern Web Developer</h3>
-            <p class="text-gray-400 text-sm mb-4">A comprehensive guide to full-stack development in 2024, covering React, Node,...</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.8 (1.3K)</span>
-              </div>
-              <a href="#" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
+      <div
+        id="resources-grid"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      ></div>
+    </section>
 
-        <!-- Card 2: Advanced CSS Mastery -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-indigo-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-indigo-900/40 to-purple-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-yellow-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">Premium</span>
-            <svg class="w-20 h-20 text-indigo-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">Course</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-indigo-400 transition">Advanced CSS Mastery</h3>
-            <p class="text-gray-400 text-sm mb-4">Deep into grid, flexbox, animations, and scalable architecture for large applications.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.8 (850)</span>
-              </div>
-              <a href="#" class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Rust for JavaScript Devs -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-purple-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-purple-900/40 to-pink-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">Interactive</span>
-            <svg class="w-20 h-20 text-purple-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-purple-400 text-xs font-bold uppercase tracking-wider mb-2">Workshop</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-purple-400 transition">Rust for JavaScript Devs</h3>
-            <p class="text-gray-400 text-sm mb-4">Learn Rust's memory model and concurrency features through familiar JS patterns.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.7 (320)</span>
-              </div>
-              <a href="#" class="text-purple-400 hover:text-purple-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Linux Command Line Pro -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-green-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-green-900/40 to-green-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Free</span>
-            <svg class="w-20 h-20 text-green-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-green-400 text-xs font-bold uppercase tracking-wider mb-2">Article Series</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-green-400 transition">Linux Command Line Pro</h3>
-            <p class="text-gray-400 text-sm mb-4">Master the terminal with this extensive collection of guides, shortcuts, and scripts.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.9 (2.3K)</span>
-              </div>
-              <a href="#" class="text-green-400 hover:text-green-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 5: Web Security Handbook -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-red-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-red-900/40 to-red-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">Updated</span>
-            <svg class="w-20 h-20 text-red-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-red-400 text-xs font-bold uppercase tracking-wider mb-2">Book</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-red-400 transition">Web Security Handbook</h3>
-            <p class="text-gray-400 text-sm mb-4">Essential practices for securing web applications against common vulnerabilities.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.8 (540)</span>
-              </div>
-              <a href="#" class="text-red-400 hover:text-red-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 6: PostgreSQL Internals -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-cyan-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-cyan-900/40 to-cyan-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-cyan-500 text-white text-xs font-bold px-3 py-1 rounded-full">Course</span>
-            <svg class="w-20 h-20 text-cyan-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-cyan-400 text-xs font-bold uppercase tracking-wider mb-2">Course</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-cyan-400 transition">PostgreSQL Internals</h3>
-            <p class="text-gray-400 text-sm mb-4">Understand how your database works under the hood to optimize performance.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.9 (920)</span>
-              </div>
-              <a href="#" class="text-cyan-400 hover:text-cyan-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 7: SaaS Component Library -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-orange-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-orange-900/40 to-orange-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
-            <svg class="w-20 h-20 text-orange-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z" />
-            </svg>
-          </div>
-          <div class="p-6">
-            <div class="text-orange-400 text-xs font-bold uppercase tracking-wider mb-2">UI Kit</div>
-            <h3 class="text-white font-bold text-xl mb-2 group-hover:text-orange-400 transition">SaaS Component Library</h3>
-            <p class="text-gray-400 text-sm mb-4">Beautiful, accessible React components for building modern web applications.</p>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-1 text-yellow-500">
-                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span class="text-white text-sm font-semibold">4.7 (680)</span>
-              </div>
-              <a href="#" class="text-orange-400 hover:text-orange-300 text-sm font-semibold flex items-center gap-1">
-                View
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 8: System Design Interview -->
-        <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-purple-500/50 transition-all duration-300 group cursor-pointer">
-          <div class="relative bg-gradient-to-br from-purple-900/40 to-indigo-950/40 h-48 flex items-center justify-center">
-            <span class="absolute top-4 right-4 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full">Advanced</span>
-            <svg class="w-20 h-20 text-purple-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="
+    <script type="module" src="./script.ts"></script>
+  </body>
+</html>
