@@ -7,15 +7,27 @@ const resources = [
         type: "E-Book",
         color: "yellow",
         tag: "Free",
+        image: "../img/Javascript/javacript1.jpg",
     },
     {
-        title: "Rust for JS Developers",
-        category: "Challenges",
+        title: "Javascript from Beginner to Professional",
+        category: "Books",
+        lang: "JavaScript",
+        description: "Learn JavaScript from scratch to advanced topics.",
+        type: "E-Book",
+        color: "yellow",
+        tag: "Free",
+        image: "../img/Javascript/javascript2.jpg",
+    },
+    {
+        title: "The Rust Programming Language",
+        category: "Books",
         lang: "Rust",
-        description: "Learn memory management and safety.",
-        type: "Workshop",
+        description: "The Rust programming language helps you write faster, more reliable software.",
+        type: "E-Book",
         color: "orange",
-        tag: "Interactive",
+        tag: "Free",
+        image: "../img/Rust/rust1.jpg",
     },
     {
         title: "Mastering TypeScript",
@@ -25,42 +37,47 @@ const resources = [
         type: "E-Book",
         color: "blue",
         tag: "Best Seller",
+        image: "../img/TypeScript/type1.png",
     },
     {
         title: "Python for Data Science",
-        category: "Articles",
+        category: "Books",
         lang: "Python",
         description: "Essential libraries for data analysis.",
-        type: "Article Series",
+        type: "E-Book",
         color: "green",
         tag: "Free",
+        image: "../img/Python/python1.jpg",
     },
     {
         title: "Go Concurrency Patterns",
-        category: "Challenges",
+        category: "Articles",
         lang: "Go",
         description: "Master channels and goroutines.",
-        type: "Course",
+        type: "Article",
         color: "cyan",
         tag: "Premium",
+        image: "../img/Go/go1.jpg",
     },
     {
-        title: "Modern Java Internals",
+        title: "Modern Programming in Java",
         category: "Books",
         lang: "Java",
-        description: "Deep dive into the JVM and memory.",
+        description: "Comprehensive guide to mastering the principles, tools, and techniques of contemporary software development.",
         type: "E-Book",
         color: "red",
         tag: "Updated",
+        image: "../img/Java/java.jpg",
     },
     {
         title: "C++ High Performance",
-        category: "Articles",
+        category: "Books",
         lang: "C++",
         description: "Optimization techniques for modern C++.",
-        type: "Article",
+        type: "E-Book",
         color: "pink",
         tag: "Advanced",
+        image: "../img/C++/c++1.png",
     },
 ];
 let currentCategory = "All";
@@ -78,12 +95,10 @@ function checkURLParameters() {
     const langParam = urlParams.get("lang");
     if (!langParam)
         return;
-    // Get all language options from the dropdown
     const options = Array.from(langFilter.options).map((opt) => opt.value);
-    // .indexOf(item) !== -1 is the older way to write .includes(item)
     if (options.indexOf(langParam) !== -1) {
         currentLang = langParam;
-        langFilter.value = langParam; // Sync the dropdown UI
+        langFilter.value = langParam;
     }
 }
 function renderResources() {
@@ -98,21 +113,45 @@ function renderResources() {
     grid.innerHTML = filtered
         .map((res) => `
         <div class="bg-[#1a1530] rounded-xl overflow-hidden hover:ring-2 hover:ring-indigo-500/50 transition-all duration-300 group cursor-pointer">
-            <div class="relative bg-gradient-to-br from-${res.color}-900/40 to-black h-48 flex items-center justify-center">
-                <span class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">${res.tag}</span>
-                <svg class="w-20 h-20 text-${res.color}-400 opacity-80" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                    <path d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                </svg>
+
+            <!-- IMAGE SECTION (BOOK SVG REMOVED) -->
+            <div class="relative h-48 overflow-hidden">
+                <img
+                  src="${res.image}"
+                  alt="${res.title}"
+                  class="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                />
+
+                <span class="absolute top-4 right-4 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                  ${res.tag}
+                </span>
             </div>
+
             <div class="p-6">
-                <div class="text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">${res.type}</div>
-                <h3 class="text-white font-bold text-xl mb-2 group-hover:text-indigo-400 transition">${res.title}</h3>
-                <h3 class="text-white font-bold text-xl mb-2 group-hover:text-indigo-400 transition">${res.title}</h3>
-                <p class="text-gray-400 text-sm mb-4">${res.description}</p>
+                <div class="text-indigo-400 text-xs font-bold uppercase tracking-wider mb-2">
+                  ${res.type}
+                </div>
+
+                <h3 class="text-white font-bold text-xl mb-2 group-hover:text-indigo-400 transition">
+                  ${res.title}
+                </h3>
+
+
+
+                <p class="text-gray-400 text-sm mb-4">
+                  ${res.description}
+                </p>
+
                 <div class="flex items-center justify-between">
-                    <span class="text-indigo-300 text-sm font-bold px-3 py-1 bg-indigo-500/20 rounded-md border border-indigo-500/30">${res.lang}</span>
+                    <span class="text-indigo-300 text-sm font-bold px-3 py-1 bg-indigo-500/20 rounded-md border border-indigo-500/30">
+                      ${res.lang}
+                    </span>
+
                     <span class="text-indigo-400 hover:text-indigo-300 text-sm font-semibold flex items-center gap-1">
-                        View <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+                        View
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                          <path d="M9 5l7 7-7 7"/>
+                        </svg>
                     </span>
                 </div>
             </div>
@@ -145,7 +184,7 @@ tabBtns.forEach((btn) => {
     });
 });
 // INITIALIZATION
-checkURLParameters(); // 1. Check if we came from language.html
-renderResources(); // 2. Render initial view
+checkURLParameters();
+renderResources();
 export {};
 //# sourceMappingURL=resources.js.map
