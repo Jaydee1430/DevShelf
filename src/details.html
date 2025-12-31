@@ -11,49 +11,59 @@
     />
   </head>
   <body class="bg-[#0b0819] text-gray-300 font-sans">
+    <!-- NAV -->
     <nav class="bg-[#130e29] shadow-lg border-b border-gray-800">
       <div
         class="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between"
       >
-        <a href="resources.html" class="text-indigo-500 font-bold text-xl"
-          >DevShelf</a
-        >
+        <a href="resources.html" class="text-indigo-500 font-bold text-xl">
+          DevShelf
+        </a>
         <a
           href="resources.html"
           class="text-white hover:text-indigo-500 font-bold text-sm"
-          >Back to Resources</a
         >
+          Back to Resources
+        </a>
       </div>
     </nav>
 
+    <!-- MAIN -->
     <main class="max-w-7xl mx-auto px-4 py-10">
+      <!-- BREADCRUMB -->
       <nav class="text-sm text-gray-500 mb-6">
         Resources <span class="mx-2">›</span>
-        <span id="res-category">Category</span> <span class="mx-2">›</span>
+        <span id="res-category">Category</span>
+        <span class="mx-2">›</span>
         <span id="res-breadcrumb" class="text-gray-300">Title</span>
       </nav>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
-        <div class="lg:col-span-2">
-          <span
-            id="res-lang-tag"
-            class="inline-block px-3 py-1 rounded-full bg-[#1e1a3a] text-indigo-400 text-xs font-semibold mb-4 border border-indigo-900/50"
-            >Language</span
-          >
-          <h1 id="res-title" class="text-4xl font-bold text-white mb-4">
-            Loading...
-          </h1>
-          <p id="res-description" class="text-xl text-gray-400 mb-8">
-            Description goes here.
-          </p>
+      <!-- HEADER INFO -->
+      <span
+        id="res-lang-tag"
+        class="inline-block px-3 py-1 rounded-full bg-[#1e1a3a] text-indigo-400 text-xs font-semibold mb-4 border border-indigo-900/50"
+      >
+        Language
+      </span>
 
-          <div
-            id="res-image-box"
-            class="aspect-video bg-[#130e29] rounded-xl border border-gray-800 flex items-center justify-center mb-12 overflow-hidden"
-          ></div>
-        </div>
+      <h1 id="res-title" class="text-4xl font-bold text-white mb-4">
+        Loading...
+      </h1>
 
-        <div class="space-y-6">
+      <p id="res-description" class="text-xl text-gray-400 mb-8">
+        Description goes here.
+      </p>
+
+      <!-- IMAGE + SIDE CARD -->
+      <div class="flex flex-col lg:flex-row gap-10">
+        <!-- IMAGE -->
+        <div
+          id="res-image-box"
+          class="lg:w-2/3 aspect-video bg-[#130e29] rounded-xl border border-gray-800 overflow-hidden"
+        ></div>
+
+        <!-- RIGHT CARD -->
+        <div class="lg:w-1/3 space-y-6">
           <div
             class="bg-[#130e29] p-6 rounded-xl border border-gray-800 shadow-xl"
           >
@@ -62,16 +72,19 @@
             >
               Start Reading
             </button>
+
             <div class="space-y-4 text-sm">
               <div class="flex justify-between">
-                <span class="text-gray-500">Format</span
-                ><span id="res-type" class="text-white font-medium">Type</span>
+                <span class="text-gray-500">Format</span>
+                <span id="res-type" class="text-white font-medium"> Type </span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- SCRIPT -->
     <script type="module" src="../dist/details.js"></script>
   </body>
 </html>
