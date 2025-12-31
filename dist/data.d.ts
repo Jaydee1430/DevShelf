@@ -6,6 +6,7 @@ export interface Resource {
     type: string;
     tag: string;
     image: string;
+    link: string;
 }
 export declare const resources: Resource[];
 //# sourceMappingURL=data.d.ts.map
